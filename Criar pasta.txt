@@ -1,13 +1,28 @@
-Criar pasta:
-sudo mkdir /var/www/html/dashboard
+Instalar Apache:
+apt install apache2 -y
 
+Instalar php
+apt install php libapache2-mod-php
+
+gitclone
+https://github.com/D3Z33/senai_linux-prova
+
+Criar pasta:
+mkdir /var/www/html/dashboard
 
 Garantir que o Apache escreva no json
-sudo touch /var/www/html/dashboard/progress.json
+touch /var/www/html/dashboard/progress.json
 
-sudo chown www-data:www-data /var/www/html/dashboard/progress.json
+chown www-data:www-data /var/www/html/dashboard/progress.json
 
-sudo chmod 664 /var/www/html/dashboard/progress.json
+chmod 664 /var/www/html/dashboard/progress.json
+
+Criar apagadas.txt
+echo "0" > apagadas.txt
+
+chown www-data:www-data /var/www/html/dashboard/apagadas.txt
+
+chmod 664 /var/www/html/dashboard/apagadas.txt
 
 
 

@@ -59,7 +59,7 @@ criar_dashboard() {
     echo ""
     tput sgr0  # Reseta as cores
 
-    sleep 5  # Atualizar a cada 5 segundos
+    sleep 2  # Atualizar a cada 2 segundos
   done
 }
 

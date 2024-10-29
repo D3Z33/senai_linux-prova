@@ -13,11 +13,15 @@ sudo -v
 RED=$(tput setaf 1)
 GREEN=$(tput setaf 2)
 YELLOW=$(tput setaf 3)
-NC=$(tput sgr0) # resetar cor
+CYAN=$(tput setaf 6)
+PURPLE=$(tput setaf 5)
+NC=$(tput sgr0)  # Resetar a cor
 
 # Função para centralizar o banner no meio do terminal
 exibir_banner() {
-    clear  # Limpar a tela antes de começar a animação
+    clear
+    tput cup 1 0  # Move o cursor para o início
+    tput setaf 1  # Define a cor do texto (vermelho)
 
     # Calcula o número de linhas e colunas do terminal
     linhas=$(tput lines)
@@ -33,7 +37,7 @@ exibir_banner() {
     tput cup $margem_topo $margem_esquerda
 
     # Exibir o banner com animação
-    echo -e "${RED}"
+    tput setaf 1  # Vermelho para o banner principal
         echo ''
         tput cup $((margem_topo+1)) $margem_esquerda
         echo ' _____           _                      ____                   _ ' && sleep 0.2
@@ -56,10 +60,12 @@ exibir_banner() {
         tput cup $((margem_topo+9)) $margem_esquerda
         echo '                                                               '   && sleep 0.2
         tput cup $((margem_topo+10)) $margem_esquerda
-        echo -e "${RED}===== Prova - Linux_Administrator - Senai Suiço Brasileiro ======" && sleep 0.2
+        tput setaf 1 # Cor Vermelha
+        echo "====== Prova - Linux_Administrator - Senai Suiço Brasileiro =====" && sleep 0.2
         tput cup $((margem_topo+11)) $margem_esquerda
         echo '                                                                '  && sleep 0.2
-        echo -e "${NC}"
+
+        tput sgr0 # Reset Cor
 }
 
 # Função para exibir instruções
