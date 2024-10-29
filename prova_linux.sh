@@ -363,7 +363,7 @@ fazer_pergunta() {
     fi
 
     # Envia o progresso para o servidor Apache após validar a resposta
-    wget --post-data "nickname=$nome_usuario&progress=$pontuacao" http://172.31.19.2/dashboard/update.php -O /dev/null
+    wget --post-data "nickname=$nome_usuario&progress=$pontuacao" http://172.31.22.2/dashboard/update.php -O /dev/null
 
     # Pausa para leitura do resultado antes de passar para a próxima pergunta
     sleep 1
