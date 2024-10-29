@@ -20,9 +20,7 @@ NC=$(tput sgr0)  # Resetar a cor
 # Função para centralizar o banner no meio do terminal
 exibir_banner() {
     clear
-    tput cup 1 0  # Move o cursor para o início
-    tput setaf 1  # Define a cor do texto (vermelho)
-
+    
     # Calcula o número de linhas e colunas do terminal
     linhas=$(tput lines)
     colunas=$(tput cols)
@@ -37,36 +35,38 @@ exibir_banner() {
     tput cup $margem_topo $margem_esquerda
 
     # Exibir o banner com animação
-    tput setaf 1  # Vermelho para o banner principal
-        echo ''
-        tput cup $((margem_topo+1)) $margem_esquerda
-        echo ' _____           _                      ____                   _ ' && sleep 0.2
-        tput cup $((margem_topo+2)) $margem_esquerda
-        echo '|  ___|__  _ __ | |_ ___  ___          / ___|  ___ ____   __ _(_)' && sleep 0.2
-        tput cup $((margem_topo+3)) $margem_esquerda
-        echo '| |_ / _ \|  _ \| __/ _ \/ __|  _____  \___ \ / _ \  _ \ / _` | |' && sleep 0.2
-        tput cup $((margem_topo+4)) $margem_esquerda
-        echo '|  _| (_) | | | | ||  __/\__ \ |_____|  ___) |  __/ | | | (_| | |' && sleep 0.2
-        tput cup $((margem_topo+5)) $margem_esquerda
-        echo '|_|  \___/|_| |_|\__\___||___/         |____/ \___|_| |_|\__,_|_|' && sleep 0.2
-        tput cup $((margem_topo+6)) $margem_esquerda
-        echo '=================================================================' && sleep 0.2
-        tput cup $((margem_topo+7)) $margem_esquerda
-        echo '                                                               '   && sleep 0.2
-        
-        tput cup $((margem_topo+8)) $margem_esquerda
-        exibir_como_digitacao "================== by: R3N4N R31S ==== or ==== by : D3Z33 =======" "$(tput setaf 2)"  # Verde e efeito de digitação
-        
-        tput cup $((margem_topo+9)) $margem_esquerda
-        echo '                                                               '   && sleep 0.2
-        tput cup $((margem_topo+10)) $margem_esquerda
-        tput setaf 1 # Cor Vermelha
-        echo "====== Prova - Linux_Administrator - Senai Suiço Brasileiro =====" && sleep 0.2
-        tput cup $((margem_topo+11)) $margem_esquerda
-        echo '                                                                '  && sleep 0.2
+    tput setaf 1  # Vermelho
+    echo ' _____           _                      ____                   _ ' && sleep 0.2
+    tput cup $((margem_topo+1)) $margem_esquerda
+    echo '|  ___|__  _ __ | |_ ___  ___          / ___|  ___ ____   __ _(_)' && sleep 0.2
+    tput cup $((margem_topo+2)) $margem_esquerda
+    echo '| |_ / _ \|  _ \| __/ _ \/ __|  _____  \___ \ / _ \  _ \ / _` | |' && sleep 0.2
+    tput cup $((margem_topo+3)) $margem_esquerda
+    echo '|  _| (_) | | | | ||  __/\__ \ |_____|  ___) |  __/ | | | (_| | |' && sleep 0.2
+    tput cup $((margem_topo+4)) $margem_esquerda
+    echo '|_|  \___/|_| |_|\__\___||___/         |____/ \___|_| |_|\__,_|_|' && sleep 0.2
+    tput cup $((margem_topo+5)) $margem_esquerda
+    echo '=================================================================' && sleep 0.2
+    tput cup $((margem_topo+6)) $margem_esquerda
+    echo '                                                               '   && sleep 0.2
+    
+    tput cup $((margem_topo+7)) $margem_esquerda
+    tput setaf 2 # Verde para o nome
+    echo "================== by: R3N4N R31S ==== or ==== by : D3Z33 =======" && sleep 0.2
+    
+    tput cup $((margem_topo+8)) $margem_esquerda
+    echo '                                                               '   && sleep 0.2
+    tput cup $((margem_topo+9)) $margem_esquerda
+    tput setaf 1  # Cor Vermelha
+    echo "===== Prova - Linux_Administrator - Senai Suiço Brasileiro ======" && sleep 0.2
+    tput cup $((margem_topo+10)) $margem_esquerda
+    echo '                                                                '  && sleep 0.2
 
-        tput sgr0 # Reset Cor
+    tput sgr0  # Resetar cor
 }
+
+# Chamar a função para exibir o banner
+exibir_banner
 
 # Função para exibir instruções
 instrucoes() {
