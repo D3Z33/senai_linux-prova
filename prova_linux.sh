@@ -9,11 +9,11 @@ fi
 
 sudo -v 
 
-# Definindo cores diretamente usando ANSI
-RED='\033[0;31m'
-GREEN='\033[0;32m'
-YELLOW='\033[0;33m'
-NC='\033[0m'  # Reset da cor
+# Definindo as cores
+RED=$(tput setaf 1)
+GREEN=$(tput setaf 2)
+YELLOW=$(tput setaf 3)
+NC=$(tput sgr0) # resetar cor
 
 # Função para centralizar o banner no meio do terminal
 exibir_banner() {

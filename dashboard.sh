@@ -1,3 +1,13 @@
+#!/bin/bash
+
+# Definindo as cores
+RED=$(tput setaf 1)
+GREEN=$(tput setaf 2)
+YELLOW=$(tput setaf 3)
+CYAN=$(tput setaf 6)
+PURPLE=$(tput setaf 5)
+NC=$(tput sgr0)  # Resetar a cor
+
 # Carrinho no terminal para cada aluno com cores
 criar_dashboard() {
   clear
