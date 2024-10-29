@@ -1,11 +1,16 @@
 <?php
-// Caminho do arquivo onde estão armazenados os progressos
+// Caminho do arquivo de progresso
 $file = '/var/www/html/dashboard/progress.json';
 
-// Lê e exibe os dados de progresso
+// Verifica se o arquivo existe
 if (file_exists($file)) {
-    echo file_get_contents($file);
+    $data = json_decode(file_get_contents($file), true);
+
+    // Exibe o progresso de cada aluno
+    foreach ($data as $nickname => $progress) {
+        echo "$nickname,$progress\n";
+    }
 } else {
-    echo json_encode([]);
+    echo "Nenhum dado de progresso disponível.";
 }
 ?>
