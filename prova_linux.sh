@@ -52,7 +52,7 @@ exibir_banner() {
     
     tput cup $((margem_topo+7)) $margem_esquerda
     tput setaf 2 # Verde para o nome
-    echo "================== by: R3N4N R31S ==== or ==== by : D3Z33 =======" && sleep 0.2
+    exibir_como_digitacao "================= by : R3N4N R31S ==== or ==== by : D3Z33 =======" && sleep 0.2
     
     tput cup $((margem_topo+8)) $margem_esquerda
     echo '                                                               '   && sleep 0.2
