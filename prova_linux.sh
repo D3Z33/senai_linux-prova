@@ -20,6 +20,8 @@ NC=$(tput sgr0)  # Resetar a cor
 # Função para centralizar o banner no meio do terminal
 exibir_banner() {
     clear
+    tput cup 1 0
+    tput setaf 1
     
     # Calcula o número de linhas e colunas do terminal
     linhas=$(tput lines)
@@ -369,7 +371,7 @@ fazer_pergunta() {
     fi
 
     # Envia o progresso para o servidor Apache após validar a resposta
-    wget --post-data "nickname=$nome_usuario&progress=$pontuacao" http://172.31.22.2/dashboard/update.php -O /dev/null
+    wget --quiet --post-data "nickname=$nome_usuario&progress=$pontuacao" http://172.31.22.2/dashboard/update.php -O /dev/null 2>&1
 
     # Pausa para leitura do resultado antes de passar para a próxima pergunta
     sleep 1
@@ -427,7 +429,7 @@ finalizar_prova() {
     enviar_telegram "Aluno: $nome_usuario\nPontuação: $pontuacao de 10\nIPs: $IPs"
 
     # Atualizar o progresso do aluno no servidor Apache
-    wget --post-data "nickname=$nome_usuario&progress=$pontuacao" http://172.31.22.2/dashboard/update.php -O /dev/null
+    wget --quiet --post-data "nickname=$nome_usuario&progress=$pontuacao" http://172.31.22.2/dashboard/update.php -O /dev/null 2>&1
 
     # Exibir uma mensagem final independente da nota
     echo ""
@@ -435,9 +437,9 @@ finalizar_prova() {
     sleep 5  # Pequena pausa antes de iniciar o apagamento
 
     # Incrementar o contador de máquinas apagadas
-    num_apagadas=$(wget -qO- http://172.31.22.2/dashboard/get_apagadas.php)
+    num_apagadas=$(wget --quiet -qO- http://172.31.22.2/dashboard/get_apagadas.php)
     num_apagadas=$((num_apagadas + 1))
-    wget --post-data="num_apagadas=$num_apagadas" http://172.31.22.2/dashboard/update_apagadas.php -O /dev/null
+    wget --quiet --post-data "nickname=$nome_usuario&progress=$pontuacao" http://172.31.22.2/dashboard/update.php -O /dev/null 2>&1
 
     # Iniciar o processo de backup e apagamento
     fazer_backup_logs

@@ -29,7 +29,7 @@ criar_dashboard() {
     tput sgr0  # Reseta a cor para o conteúdo
 
     # Recolher os dados de todos os alunos (progresso e nickname)
-    wget -qO- http://172.31.22.2/dashboard/get_status.php | while read -r linha; do
+    wget --quiet -qO- http://172.31.22.2/dashboard/get_status.php | while read -r linha; do
       nickname=$(echo $linha | cut -d ',' -f 1)
       progresso=$(echo $linha | cut -d ',' -f 2)
 
@@ -52,8 +52,9 @@ criar_dashboard() {
 
     # Exibir o progresso de apagamento/criptografia com cor em vermelho
     tput setaf 1  # Vermelho para o progresso de apagamento
+    echo "----------------------------------------------"
     echo ""
-    echo "Máquinas que sofreram Backup e remoção de LOG's: $(wget -qO- http://172.31.22.2/dashboard/get_apagadas.php)"
+    echo "Máquinas que sofreram Backup e remoção de LOG's: $(wget --quiet -qO- http://172.31.22.2/dashboard/get_apagadas.php)"
     echo ""
     echo "----------------------------------------------"
     echo ""
