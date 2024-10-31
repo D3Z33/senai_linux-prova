@@ -177,7 +177,7 @@ Este projeto é um exemplo de simulação educacional, destinado apenas para amb
 
 - ![Bash Script](https://www.pngwing.com/en/free-png-xiqgd) **Bash Script:** Linguagem principal utilizada para automação dos processos de prova, envio de dados e controle do fluxo.
 
-- ![Apache Server](https://github.com/D3Z33/senai_linux-prova/blob/main/images/apache.png) **Apache Server:** Atua como um servidor intermediário para coleta e exibição dos dados em tempo real, integrando o front-end (dashboard) ao back-end.
+- <img src="https://github.com/D3Z33/senai_linux-prova/blob/main/images/apache.png" alt="Apache Server" width="64" height="64"> **Apache Server:** Atua como um servidor intermediário para coleta e exibição dos dados em tempo real, integrando o front-end (dashboard) ao back-end.
 
 - ![PHP](https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/1200px-PHP-logo.svg.png) **PHP:** Script server-side para manipulação e armazenamento dos dados de progresso dos alunos, além de processamento das requisições HTTP para o dashboard.
 
