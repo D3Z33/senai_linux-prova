@@ -83,30 +83,42 @@ O projeto pode ser executado de duas formas: **Modo Padrão (sem Dashboard)** e 
    cd senai_linux-prova
    ```
 
-2. **Configuração do Apache**
+2. **Configuração do Apache**:
    - Instale o Apache
    ```bash
    sudo apt update
    sudo apt install apache2 -y
    ```
-
+   
 - **Configure o Apache para servir os arquivos do dashboard:**
   - Copie a pasta `dashboard` para o diretório `/var/www/html/`.
   - Verifique se o Apache está acessível no IP configurado (ex: `http://<SEU_IP_SERVER>/dashboard`).
 
-3. **Dê Permissões ao Script da Prova e Arquivo JSON:**
+3. **Instalar o PHP**:
    ```bash
-   chmod +x prova_linux.sh
-   sudo touch /var/www/html/dashboard/progress.json
-   sudo chmod 666 /var/www/html/dashboard/progress.json
+   sudo apt install php libapache2-mod-php
    ```
 
-4. **Execute o Script da Prova**:
+4. **Criar Pasta e Arquivo JSON com permissões**:
+   ```bash
+   sudo mkdir /var/www/html/dashboard
+   sudo nano /var/www/html/dashboard/progress.json
+   sudo chown www-data:www-data /var/www/html/dashboard/progress.json
+   sudo chmod 664 /var/www/html/dashboard/progress.json
+   sudo touch /var/www/html/dashboard/progress.json
+   sudo chmod +x prova_linux.sh
+   sudo nano /var/www/html/dashboard/apagadas.txt
+   sudo echo "0" > apagadas.txt
+   sudo chown www-data:www-data /var/www/html/dashboard/apagadas.txt
+   sudo chmod 664 /var/www/html/dashboard/apagadas.txt
+   ```
+
+5. **Execute o Script da Prova**:
    ```bash
    sudo bash ./prova_linux
    ```
 
-5. **Execute o Script do Dashboard em Outro Terminal para Monitoramento**:
+6. **Execute o Script do Dashboard em Outro Terminal para Monitoramento**:
    ```bash
    sudo bash ./dashboard.sh
    ```
@@ -175,22 +187,41 @@ Este projeto é um exemplo de simulação educacional, destinado apenas para amb
 
 ## ⚙️ Tecnologias Utilizadas
 
-- ![Bash Script](https://www.pngwing.com/en/free-png-xiqgd) **Bash Script:** Linguagem principal utilizada para automação dos processos de prova, envio de dados e controle do fluxo.
+<div style="text-align: center; margin-bottom: 10px;">
+ 
+  <img src="https://github.com/D3Z33/senai_linux-prova/blob/main/images/shell.png" alt="Bash Script" width="32" height="32" style="margin-right: 5px;">
+  <img src="https://github.com/D3Z33/senai_linux-prova/blob/main/images/apache.png" alt="Apache Server" width="32" height="32" style="margin-right: 5px;">
+  <img src="https://github.com/D3Z33/senai_linux-prova/blob/main/images/php.png" alt="PHP" width="32" height="32" style="margin-right: 5px;">
+  <img src="https://github.com/D3Z33/senai_linux-prova/blob/main/images/telegram.png" alt="Telegram Bot API" width="32" height="32" style="margin-right: 5px;">
+  <img src="https://github.com/D3Z33/senai_linux-prova/blob/main/images/json.png" alt="JSON" width="32" height="32">
+  
+</div>
 
-- ![Apache Server](https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Apache_HTTP_Server_logo.svg/1200px-Apache_HTTP_Server_logo.svg.png) **Apache Server:** Atua como um servidor intermediário para coleta e exibição dos dados em tempo real, integrando o front-end (dashboard) ao back-end.
+- **Bash Script:** Linguagem principal utilizada para automação dos processos de prova, envio de dados e controle do fluxo.
 
-- ![PHP](https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/1200px-PHP-logo.svg.png) **PHP:** Script server-side para manipulação e armazenamento dos dados de progresso dos alunos, além de processamento das requisições HTTP para o dashboard.
+- **Apache Server:** Atua como um servidor intermediário para coleta e exibição dos dados em tempo real, integrando o front-end (dashboard) ao back-end.
 
-- ![Telegram Bot API](https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Telegram_logo.svg/1200px-Telegram_logo.svg.png) **Telegram Bot API:** Configurado para envio de notificações e captura de dados sensíveis de forma automatizada, garantindo que as atualizações cheguem ao instrutor.
+- **PHP:** Script server-side para manipulação e armazenamento dos dados de progresso dos alunos, além de processamento das requisições HTTP para o dashboard.
 
-- ![JSON](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/JSON_vector_logo.svg/1200px-JSON_vector_logo.svg.png) **JSON:** Utilizado como estrutura de armazenamento leve e eficaz para persistência dos dados de progresso e status, facilmente manipulável pelo PHP e pelo script Bash.
+- **Telegram Bot API:** Configurado para envio de notificações e captura de dados sensíveis de forma automatizada, garantindo que as atualizações cheguem ao instrutor.
+
+- **JSON:** Utilizado como estrutura de armazenamento leve e eficaz para persistência dos dados de progresso e status, facilmente manipulável pelo PHP e pelo script Bash.
 
 ---
 
+## 🤝 Conecte-se e Colabore
 
+- Dúvidas ?  Sugestões ?  Colaborações ? Vamos conversar !
 
+<p>
+  <a href="https://github.com/D3Z33" target="_blank">
+    <img src="https://img.shields.io/badge/GitHub-D3Z33-000?style=for-the-badge&logo=github" alt="GitHub: D3Z33" width="150"/>
+  </a>
+</p>
 
+---
 
+## ⭐ Gostou deste projeto? Deixe um star no repositório e contribua para a conscientização sobre segurança digital !
 
 
    
