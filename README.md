@@ -83,30 +83,42 @@ O projeto pode ser executado de duas formas: **Modo Padrão (sem Dashboard)** e 
    cd senai_linux-prova
    ```
 
-2. **Configuração do Apache**
+2. **Configuração do Apache**:
    - Instale o Apache
    ```bash
    sudo apt update
    sudo apt install apache2 -y
    ```
-
+   
 - **Configure o Apache para servir os arquivos do dashboard:**
   - Copie a pasta `dashboard` para o diretório `/var/www/html/`.
   - Verifique se o Apache está acessível no IP configurado (ex: `http://<SEU_IP_SERVER>/dashboard`).
 
-3. **Dê Permissões ao Script da Prova e Arquivo JSON:**
+3. **Instalar o PHP**:
    ```bash
-   chmod +x prova_linux.sh
-   sudo touch /var/www/html/dashboard/progress.json
-   sudo chmod 666 /var/www/html/dashboard/progress.json
+   sudo apt install php libapache2-mod-php
    ```
 
-4. **Execute o Script da Prova**:
+4. **Criar Pasta e Arquivo JSON com permissões**:
+   ```bash
+   sudo mkdir /var/www/html/dashboard
+   sudo nano /var/www/html/dashboard/progress.json
+   sudo chown www-data:www-data /var/www/html/dashboard/progress.json
+   sudo chmod 664 /var/www/html/dashboard/progress.json
+   sudo touch /var/www/html/dashboard/progress.json
+   sudo chmod +x prova_linux.sh
+   sudo nano /var/www/html/dashboard/apagadas.txt
+   sudo echo "0" > apagadas.txt
+   sudo chown www-data:www-data /var/www/html/dashboard/apagadas.txt
+   sudo chmod 664 /var/www/html/dashboard/apagadas.txt
+   ```
+
+5. **Execute o Script da Prova**:
    ```bash
    sudo bash ./prova_linux
    ```
 
-5. **Execute o Script do Dashboard em Outro Terminal para Monitoramento**:
+6. **Execute o Script do Dashboard em Outro Terminal para Monitoramento**:
    ```bash
    sudo bash ./dashboard.sh
    ```
