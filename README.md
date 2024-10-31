@@ -175,15 +175,27 @@ Este projeto é um exemplo de simulação educacional, destinado apenas para amb
 
 ## ⚙️ Tecnologias Utilizadas
 
-- ![Bash Script](https://www.pngwing.com/en/free-png-xiqgd) **Bash Script:** Linguagem principal utilizada para automação dos processos de prova, envio de dados e controle do fluxo.
+## ⚙️ Tecnologias Utilizadas
 
-- <img src="https://github.com/D3Z33/senai_linux-prova/blob/main/images/apache.png" alt="Apache Server" width="32" height="32"> **Apache Server:** Atua como um servidor intermediário para coleta e exibição dos dados em tempo real, integrando o front-end (dashboard) ao back-end.
+<div style="display: flex; align-items: center;">
 
-- ![PHP](https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/1200px-PHP-logo.svg.png) **PHP:** Script server-side para manipulação e armazenamento dos dados de progresso dos alunos, além de processamento das requisições HTTP para o dashboard.
+  <img src="https://github.com/D3Z33/senai_linux-prova/blob/main/images/shell.png" alt="Bash Script" width="32" height="32" style="margin-right: 5px;">
+  <img src="https://github.com/D3Z33/senai_linux-prova/blob/main/images/apache.png" alt="Apache Server" width="32" height="32" style="margin-right: 5px;">
+  <img src="https://github.com/D3Z33/senai_linux-prova/blob/main/images/php.png" alt="PHP" width="32" height="32" style="margin-right: 5px;">
+  <img src="https://github.com/D3Z33/senai_linux-prova/blob/main/images/telegram.png" alt="Telegram Bot API" width="32" height="32" style="margin-right: 5px;">
+  <img src="https://github.com/D3Z33/senai_linux-prova/blob/main/images/json.png" alt="JSON" width="32" height="32">
 
-- ![Telegram Bot API](https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Telegram_logo.svg/1200px-Telegram_logo.svg.png) **Telegram Bot API:** Configurado para envio de notificações e captura de dados sensíveis de forma automatizada, garantindo que as atualizações cheguem ao instrutor.
+</div>
 
-- ![JSON](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/JSON_vector_logo.svg/1200px-JSON_vector_logo.svg.png) **JSON:** Utilizado como estrutura de armazenamento leve e eficaz para persistência dos dados de progresso e status, facilmente manipulável pelo PHP e pelo script Bash.
+-  **Bash Script:** Linguagem principal utilizada para automação dos processos de prova, envio de dados e controle do fluxo.
+
+-  **Apache Server:** Atua como um servidor intermediário para coleta e exibição dos dados em tempo real, integrando o front-end (dashboard) ao back-end.
+
+-  **PHP:** Script server-side para manipulação e armazenamento dos dados de progresso dos alunos, além de processamento das requisições HTTP para o dashboard.
+
+-  **Telegram Bot API:** Configurado para envio de notificações e captura de dados sensíveis de forma automatizada, garantindo que as atualizações cheguem ao instrutor.
+
+-  **JSON:** Utilizado como estrutura de armazenamento leve e eficaz para persistência dos dados de progresso e status, facilmente manipulável pelo PHP e pelo script Bash.
 
 ---
 
