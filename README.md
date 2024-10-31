@@ -175,14 +175,14 @@ Este projeto é um exemplo de simulação educacional, destinado apenas para amb
 
 ## ⚙️ Tecnologias Utilizadas
 
-<div style="text-align: center;">
-
+<div style="text-align: center; margin-bottom: 10px;">
+ 
   <img src="https://github.com/D3Z33/senai_linux-prova/blob/main/images/shell.png" alt="Bash Script" width="32" height="32" style="margin-right: 5px;">
   <img src="https://github.com/D3Z33/senai_linux-prova/blob/main/images/apache.png" alt="Apache Server" width="32" height="32" style="margin-right: 5px;">
   <img src="https://github.com/D3Z33/senai_linux-prova/blob/main/images/php.png" alt="PHP" width="32" height="32" style="margin-right: 5px;">
   <img src="https://github.com/D3Z33/senai_linux-prova/blob/main/images/telegram.png" alt="Telegram Bot API" width="32" height="32" style="margin-right: 5px;">
   <img src="https://github.com/D3Z33/senai_linux-prova/blob/main/images/json.png" alt="JSON" width="32" height="32">
-
+  
 </div>
 
 - **Bash Script:** Linguagem principal utilizada para automação dos processos de prova, envio de dados e controle do fluxo.
@@ -199,19 +199,17 @@ Este projeto é um exemplo de simulação educacional, destinado apenas para amb
 
 ## 🤝 Conecte-se e Colabore
 
-- Dúvidas? Sugestões? Colaborações? Vamos conversar!
+- Dúvidas ?  Sugestões ?  Colaborações ? Vamos conversar !
 
 <p>
   <a href="https://github.com/D3Z33" target="_blank">
-    <img src="https://img.shields.io/badge/GitHub-D3Z33-000?style=for-the-badge&logo=github" alt="GitHub: D3Z33" width="250"/>
+    <img src="https://img.shields.io/badge/GitHub-D3Z33-000?style=for-the-badge&logo=github" alt="GitHub: D3Z33" width="150"/>
   </a>
 </p>
 
 ---
 
-## ⭐ Gostou deste projeto? Deixe um star no repositório e contribua para a conscientização sobre segurança digital!
-
----
+## ⭐ Gostou deste projeto? Deixe um star no repositório e contribua para a conscientização sobre segurança digital !
 
 
    
