@@ -175,9 +175,7 @@ Este projeto é um exemplo de simulação educacional, destinado apenas para amb
 
 ## ⚙️ Tecnologias Utilizadas
 
-## ⚙️ Tecnologias Utilizadas
-
-<div style="display: flex; align-items: center;">
+<div style="text-align: center;">
 
   <img src="https://github.com/D3Z33/senai_linux-prova/blob/main/images/shell.png" alt="Bash Script" width="32" height="32" style="margin-right: 5px;">
   <img src="https://github.com/D3Z33/senai_linux-prova/blob/main/images/apache.png" alt="Apache Server" width="32" height="32" style="margin-right: 5px;">
@@ -199,9 +197,22 @@ Este projeto é um exemplo de simulação educacional, destinado apenas para amb
 
 ---
 
+## ⭐ Gostou deste projeto? Deixe um star no repositório e contribua para a conscientização sobre segurança digital!
 
+---
 
+## 🤝 Conecte-se e Colabore
 
+Dúvidas? Sugestões? Colaborações? Vamos conversar!
+
+<p align="center">
+  <a href="https://github.com/DZ33" target="_blank">
+    <img src="https://img.shields.io/badge/GitHub-DZ33-000?style=for-the-badge&logo=github" alt="GitHub: DZ33" width="100"/>
+  </a>
+  <span style="margin-left: 10px;">Feito por: <strong>D3Z33</strong></span>
+</p>
+
+---
 
 
 
