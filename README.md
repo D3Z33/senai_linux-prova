@@ -16,10 +16,13 @@ Esse projeto é ideal para treinamento em cibersegurança, pois mostra como um "
 
 Este projeto tem como objetivos:
 - **Demonstrar a importância de validar scripts desconhecidos** e a análise criteriosa antes de executá-los.
+-
 - **Simular técnicas de engenharia social** e **engenharia de confiança**, exemplificando como scripts podem capturar dados sem o conhecimento do usuário.
+- 
 - **Exibir os riscos de comandos camuflados e persistência de malware**, utilizando práticas comuns em ataques reais.
-- **Todo o projeto simula técnicas frequentemente utilizadas por cibercriminosos** para capturar **credenciais sensíveis**, demonstrando como essas práticas podem, em **situações reais*, comprometer completamente o **sistema de uma empresa*.
-
+-
+- **Todo o projeto simula técnicas frequentemente utilizadas por cibercriminosos** para capturar **credenciais sensíveis**, demonstrando como essas práticas podem, em *situações reais*, comprometer completamente o **sistema de uma empresa*.
+-
 Este projeto se destina a profissionais de TI, equipes de segurança e estudantes que buscam aprofundar seu entendimento sobre os perigos de scripts maliciosos e as melhores práticas de segurança.
 
 ---
@@ -28,8 +31,11 @@ Este projeto se destina a profissionais de TI, equipes de segurança e estudante
 
 O projeto **Senai - Linux_Prova** oferece:
 1. **Prova de múltipla escolha** com perguntas técnicas de Linux e cibersegurança.
+
 2. **Ações camufladas** como captura de senhas, criptografia de arquivos e envio de dados a servidores remotos, disfarçadas como “backup” e “remoção de logs”.
+
 3. **Captura e envio de dados** como progresso da prova e informações de IP e credenciais.
+
 4. **Configuração de um dashboard** para acompanhamento em tempo real do progresso dos alunos.
 
 > ⚠️ **Atenção**: Este projeto é destinado exclusivamente para fins educacionais em ambientes controlados.
