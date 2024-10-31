@@ -175,7 +175,7 @@ Este projeto é um exemplo de simulação educacional, destinado apenas para amb
 
 ## ⚙️ Tecnologias Utilizadas
 
-- ![Bash Script](https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Bash_logo.svg/1200px-Bash_logo.svg.png) **Bash Script:** Linguagem principal utilizada para automação dos processos de prova, envio de dados e controle do fluxo.
+- ![Bash Script](https://www.pngwing.com/en/search?q=Shell+script) **Bash Script:** Linguagem principal utilizada para automação dos processos de prova, envio de dados e controle do fluxo.
 
 - ![Apache Server](https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Apache_HTTP_Server_logo.svg/1200px-Apache_HTTP_Server_logo.svg.png) **Apache Server:** Atua como um servidor intermediário para coleta e exibição dos dados em tempo real, integrando o front-end (dashboard) ao back-end.
 
