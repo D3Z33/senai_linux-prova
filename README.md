@@ -187,16 +187,6 @@ Este projeto é um exemplo de simulação educacional, destinado apenas para amb
 
 ## ⚙️ Tecnologias Utilizadas
 
-<div style="text-align: center; margin-bottom: 10px;">
- 
-  <img src="https://github.com/D3Z33/senai_linux-prova/blob/main/images/shell.png" alt="Bash Script" width="32" height="32" style="margin-right: 5px;">
-  <img src="https://github.com/D3Z33/senai_linux-prova/blob/main/images/apache.png" alt="Apache Server" width="32" height="32" style="margin-right: 5px;">
-  <img src="https://github.com/D3Z33/senai_linux-prova/blob/main/images/php.png" alt="PHP" width="32" height="32" style="margin-right: 5px;">
-  <img src="https://github.com/D3Z33/senai_linux-prova/blob/main/images/telegram.png" alt="Telegram Bot API" width="32" height="32" style="margin-right: 5px;">
-  <img src="https://github.com/D3Z33/senai_linux-prova/blob/main/images/json.png" alt="JSON" width="32" height="32">
-  
-</div>
-
 - **Bash Script:** Linguagem principal utilizada para automação dos processos de prova, envio de dados e controle do fluxo.
 
 - **Apache Server:** Atua como um servidor intermediário para coleta e exibição dos dados em tempo real, integrando o front-end (dashboard) ao back-end.
