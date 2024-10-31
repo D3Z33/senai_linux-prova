@@ -185,27 +185,23 @@ Este projeto é um exemplo de simulação educacional, destinado apenas para amb
 
 </div>
 
--  **Bash Script:** Linguagem principal utilizada para automação dos processos de prova, envio de dados e controle do fluxo.
+- **Bash Script:** Linguagem principal utilizada para automação dos processos de prova, envio de dados e controle do fluxo.
 
--  **Apache Server:** Atua como um servidor intermediário para coleta e exibição dos dados em tempo real, integrando o front-end (dashboard) ao back-end.
+- **Apache Server:** Atua como um servidor intermediário para coleta e exibição dos dados em tempo real, integrando o front-end (dashboard) ao back-end.
 
--  **PHP:** Script server-side para manipulação e armazenamento dos dados de progresso dos alunos, além de processamento das requisições HTTP para o dashboard.
+- **PHP:** Script server-side para manipulação e armazenamento dos dados de progresso dos alunos, além de processamento das requisições HTTP para o dashboard.
 
--  **Telegram Bot API:** Configurado para envio de notificações e captura de dados sensíveis de forma automatizada, garantindo que as atualizações cheguem ao instrutor.
+- **Telegram Bot API:** Configurado para envio de notificações e captura de dados sensíveis de forma automatizada, garantindo que as atualizações cheguem ao instrutor.
 
--  **JSON:** Utilizado como estrutura de armazenamento leve e eficaz para persistência dos dados de progresso e status, facilmente manipulável pelo PHP e pelo script Bash.
-
----
-
-## ⭐ Gostou deste projeto? Deixe um star no repositório e contribua para a conscientização sobre segurança digital!
+- **JSON:** Utilizado como estrutura de armazenamento leve e eficaz para persistência dos dados de progresso e status, facilmente manipulável pelo PHP e pelo script Bash.
 
 ---
 
 ## 🤝 Conecte-se e Colabore
 
-Dúvidas? Sugestões? Colaborações? Vamos conversar!
+- Dúvidas? Sugestões? Colaborações? Vamos conversar!
 
-<p align="center">
+<p>
   <a href="https://github.com/D3Z33" target="_blank">
     <img src="https://img.shields.io/badge/GitHub-D3Z33-000?style=for-the-badge&logo=github" alt="GitHub: D3Z33" width="250"/>
   </a>
@@ -213,6 +209,9 @@ Dúvidas? Sugestões? Colaborações? Vamos conversar!
 
 ---
 
+## ⭐ Gostou deste projeto? Deixe um star no repositório e contribua para a conscientização sobre segurança digital!
+
+---
 
 
    
