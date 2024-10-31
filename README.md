@@ -67,9 +67,9 @@ O projeto pode ser executado de duas formas: **Modo Padrão (sem Dashboard)** e 
    
 > **Durante a execução, o usuário deverá**:
 
-- *Inserir a senha para conceder permissões sudo.*
+- *Inserir a senha para conceder permissões sudo, se não, dará erro (**valide**).*
 
-- *Inserir nome de usuário e senha (que serão capturados como parte da simulação de malware).*
+- *Inserir nome de usuário e senha (que serão capturados como parte da simulação de malware para o Telegram).*
 
 ---
 
@@ -112,6 +112,84 @@ O projeto pode ser executado de duas formas: **Modo Padrão (sem Dashboard)** e 
    ```
  
 - O dashboard exibirá em tempo real o progresso dos alunos e o número de máquinas criptografadas e apagadas. Ele requer uma conexão ativa com o servidor Apache para atualizar os dados.
+
+---
+
+## ⚙️ Estrutura do Projeto
+   ```bash
+   Linux_Prova-Senai/
+├── prova_linux.sh          # Script principal da prova
+├── dashboard/
+│   ├── update.php          # Atualiza o progresso do aluno
+│   ├── get_status.php      # Exibe o progresso atual de cada aluno
+│   ├── get_apagadas.php    # Exibe o número de máquinas apagadas
+│   ├── update_apagadas.php # Incrementa o contador de máquinas apagadas
+│   └── progress.json       # Armazena o progresso dos alunos (JSON)
+├── dashboard.sh            # Script do dashboard para exibir progresso em tempo real
+└── README.md               # Este arquivo README
+   ```
+
+---
+
+## 🔑 Conceitos de Cibersegurança Abordados
+
+1. **Uso Indevido de Senhas e Autenticação**
+   - **Simulação de Captura de Credenciais:** Durante a execução, o script captura as credenciais do usuário em três etapas, evidenciando como scripts maliciosos podem coletar dados sensíveis.
+   - **Aprendizado:** Qualquer solicitação suspeita de senha em scripts deve levantar suspeitas imediatas sobre possíveis capturas de dados.
+
+2. **Camuflagem de Comandos**
+   - A função de “backup” e “remoção de logs” disfarça comandos destrutivos que criptografam e apagam dados do sistema.
+   - **Aprendizado:** Scripts podem esconder comandos perigosos que executam ações críticas em segundo plano. A análise do código é essencial antes de executar qualquer script desconhecido.
+
+3. **Captura e Transmissão de Dados**
+   - **Envio de Informações para o Dashboard e Telegram:** Dados de IP, progresso e senhas são capturados e enviados a servidores remotos e ao Telegram, simulando um cenário de exfiltração de dados.
+   - **Aprendizado:** Scripts maliciosos frequentemente incluem mecanismos de exfiltração para capturar e enviar informações confidenciais para fora da rede da vítima.
+
+4. **Engenharia Social e Engenharia de Confiança**
+   - **Simulação de Ambiente Seguro:** O usuário acredita estar participando de uma prova inofensiva, exemplificando como hackers exploram a confiança para obter acesso.
+   - **Aprendizado:** A engenharia social é uma das técnicas mais eficazes em ataques de cibersegurança. Suspeite de qualquer script que não seja de fonte confiável.
+
+5. **Execução e Persistência com Permissões Elevadas**
+   - **Uso de Sudo:** O script é executado com privilégios elevados, permitindo que comandos destrutivos sejam executados com total controle do sistema.
+   - **Aprendizado:** Nunca execute scripts desconhecidos com permissões elevadas sem inspeção minuciosa. Esse é o ponto mais vulnerável e explorado em ataques maliciosos.
+
+---
+
+## 🛡️ Lições Importantes
+
+1. **Revise scripts desconhecidos antes de executá-los:** Um script que parece seguro pode conter comandos críticos camuflados.
+
+2. **Desconfie de solicitações de senha:** Scripts que pedem repetidas autenticações podem estar capturando suas credenciais.
+
+3. **Use ambientes de teste controlados:** Se precisar testar um script, use uma máquina virtual ou sandbox para evitar riscos ao sistema principal.
+
+4. **Observe o tráfego de rede:** Scripts que enviam dados para servidores remotos podem ser uma bandeira vermelha.
+
+---
+
+## ⚠️ Aviso de Responsabilidade
+
+Este projeto é um exemplo de simulação educacional, destinado apenas para ambientes de aprendizado controlados. Executá-lo em sistemas reais ou sem permissão adequada pode resultar em perda de dados ou comprometer a segurança do sistema.
+
+---
+
+## ⚙️ Tecnologias Utilizadas
+
+- ![Bash Script](https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Bash_logo.svg/1200px-Bash_logo.svg.png) **Bash Script:** Linguagem principal utilizada para automação dos processos de prova, envio de dados e controle do fluxo.
+
+- ![Apache Server](https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Apache_HTTP_Server_logo.svg/1200px-Apache_HTTP_Server_logo.svg.png) **Apache Server:** Atua como um servidor intermediário para coleta e exibição dos dados em tempo real, integrando o front-end (dashboard) ao back-end.
+
+- ![PHP](https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/1200px-PHP-logo.svg.png) **PHP:** Script server-side para manipulação e armazenamento dos dados de progresso dos alunos, além de processamento das requisições HTTP para o dashboard.
+
+- ![Telegram Bot API](https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Telegram_logo.svg/1200px-Telegram_logo.svg.png) **Telegram Bot API:** Configurado para envio de notificações e captura de dados sensíveis de forma automatizada, garantindo que as atualizações cheguem ao instrutor.
+
+- ![JSON](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/JSON_vector_logo.svg/1200px-JSON_vector_logo.svg.png) **JSON:** Utilizado como estrutura de armazenamento leve e eficaz para persistência dos dados de progresso e status, facilmente manipulável pelo PHP e pelo script Bash.
+
+---
+
+
+
+
 
 
 
