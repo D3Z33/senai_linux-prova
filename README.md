@@ -206,10 +206,9 @@ Este projeto é um exemplo de simulação educacional, destinado apenas para amb
 Dúvidas? Sugestões? Colaborações? Vamos conversar!
 
 <p align="center">
-  <a href="https://github.com/DZ33" target="_blank">
-    <img src="https://img.shields.io/badge/GitHub-DZ33-000?style=for-the-badge&logo=github" alt="GitHub: DZ33" width="100"/>
+  <a href="https://github.com/D3Z33" target="_blank">
+    <img src="https://img.shields.io/badge/GitHub-D3Z33-000?style=for-the-badge&logo=github" alt="GitHub: D3Z33" width="250"/>
   </a>
-  <span style="margin-left: 10px;">Feito por: <strong>D3Z33</strong></span>
 </p>
 
 ---
